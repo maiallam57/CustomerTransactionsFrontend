@@ -46,8 +46,8 @@ h1 {
 }
 
 
-.w-15 {
-    width: 15%;
+.w-10 {
+    width: 10%;
 }
 
 
@@ -107,6 +107,7 @@ thead th.active {
 
 tbody tr {
     --delay: .1s;
+    cursor: pointer;
     transition: .5s ease-in-out var(--delay), background-color 0s;
 }
 

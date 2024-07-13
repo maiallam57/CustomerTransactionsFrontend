@@ -51,9 +51,9 @@ function displayTransactions(transactions) {
         let type = transaction.transaction_type
         transactionTableBody.append(`
             <tr>
-                <td class="p-2 px-3">${customer.name}</td>
+                <td onclick="displayTransactionsOfCustomer(${customer.id}, '${customer.name}')" class="p-2 px-3">${customer.name}</td>
                 <td class="p-2 px-3">${transaction.date}</td>
-                <td class="p-2 px-3">${transaction.amount}</td>
+                <td class="p-2 px-3">${transaction.amount} EGP</td>
                 <td class="p-2 px-3"> <p class="text-center py-1 rounded-3
                                 ${type.toLowerCase()}">${type}</p></td>
             </tr>
@@ -106,6 +106,61 @@ function updateChart(transactions) {
     });
 }
 
+
+//! ===== Transaction Amount/day Chat For The Selected Customer  ======
+
+function calculateTotalAmountPerDay(transactions, customerId) {
+    var dataPoints = [];
+
+    // Group transactions by date and sum amounts
+    var groupedTransactions = transactions.reduce(function (acc, transaction) {
+        if (transaction.customer_id === customerId) {
+            var date = transaction.date;
+            acc[date] = acc[date] || 0;
+            acc[date] += transaction.amount;
+        }
+        return acc;
+    }, {});
+
+    // Prepare data points for CanvasJS
+    for (var date in groupedTransactions) {
+        dataPoints.push({ x: new Date(date), y: groupedTransactions[date] });
+    }
+
+    return dataPoints;
+}
+
+function displayTransactionsOfCustomer(customerId, customerName) {
+    var chart = new CanvasJS.Chart("chartContainer", {
+        title: {
+            text: "Total Transaction Amount per Day"
+        },
+        axisX: {
+            title: "Date",
+            valueFormatString: "DD MMM YYYY"
+        },
+        axisY: {
+            title: "Amount",
+            includeZero: false
+        },
+        data: [{
+            type: "spline",
+            name: "Transaction Amount",
+            dataPoints: []
+        }]
+    });
+
+    chart.render();
+
+    var dataPoints = calculateTotalAmountPerDay(transactions, customerId);
+
+    // Update chart with new data points
+    chart.options.data[0].dataPoints = dataPoints;
+    chart.options.title.text = `Total Transaction Amount per Day for Customer ${customerName}`;
+    chart.render();
+}
+
+
 //! ========================= Document Ready  ==========================
 
 $(document).ready(function () {
@@ -114,7 +169,8 @@ $(document).ready(function () {
     loaderOut()
 
     $('#customerNameFilter, #transactionAmountFilter').on('keyup', filterTransactions);
-
+    displayTransactionsOfCustomer();
+    $('#CustomerName').on('click');
     fetchData();
-});
 
+});

@@ -5,11 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/all.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <link rel="stylesheet" href="css/main.css">
 
         <title>Customer Transaction | Mai Allam</title>
-        <link rel="icon" href="images/route.jpg">
+        <link rel="icon" href="images/transaction.png">
     </head>
     <body class="bg-black text-white">
 
@@ -20,19 +19,20 @@
         </section>
 
         <!-- As a heading -->
-        <nav class="navbar mt-5">
+        <nav
+            class="navbar my-3 m-auto justify-content-center align-content-center">
             <div
-                class="container navbar-brand mb-0 h1 m-auto justify-content-center align-content-center">
-                <img src="images/transaction (1).png" class="w-15" alt>
+                class="container my-3 pb-3 m-auto justify-content-center align-content-center">
+                <img src="images/transaction.png" class="w-10"
+                    alt="transaction logo">
             </div>
-        </nav>
-
-        <div class="container mt-5 px-5">
             <h1 class="text-center">Customer Transactions</h1>
 
-            <!--================== title & search =====================-->
+        </nav>
 
-            <div class="py-5 bg-black">
+        <div class="container px-5">
+            <!--================== title & search =====================-->
+            <div class="py-3 bg-black">
                 <div class="d-flex justify-content-center gap-4">
                     <div
                         class="search-group w-25 p-2 rounded-3 d-flex justify-content-center align-items-center">
@@ -42,12 +42,12 @@
                         <i class="fa-solid fa-magnifying-glass text-dark"></i>
                     </div>
                     <div
-                    class="search-group w-25 p-2 rounded-3 d-flex justify-content-center align-items-center">
-                    <input type="text" id="transactionAmountFilter"
-                        class="w-100 bg-transparent border-0"
-                        placeholder="Filter by Transaction Amount">
-                    <i class="fa-solid fa-magnifying-glass text-dark"></i>
-                </div>
+                        class="search-group w-25 p-2 rounded-3 d-flex justify-content-center align-items-center">
+                        <input type="text" id="transactionAmountFilter"
+                            class="w-100 bg-transparent border-0"
+                            placeholder="Filter by Transaction Amount">
+                        <i class="fa-solid fa-magnifying-glass text-dark"></i>
+                    </div>
                 </div>
             </div>
 
@@ -62,9 +62,11 @@
                                     class="fa-solid fa-arrow-up"></i></th>
                             <th class="p-3"> Transaction Date <i
                                     class="fa-solid fa-arrow-up"></i></th>
-                            <th class="p-3"> Transaction Amount <i
+                            <th class="p-3"> Transaction
+                                Amount <i
                                     class="fa-solid fa-arrow-up"></i></th>
-                            <th class="p-3"> Transaction Type <i
+                            <th class="p-3"> Transaction
+                                Type <i
                                     class="fa-solid fa-arrow-up"></i></th>
                         </tr>
                     </thead>
@@ -75,15 +77,24 @@
             </div>
 
             <!--================== end table =====================-->
+            <div id="chartContainer"
+                class="w-100 mb-5 rounded-3 overflow-hidden"
+                style="height: 350px;">
+            </div>
+
             <canvas id="transactionChart" width="100%"
                 class="p-4"></canvas>
         </div>
 
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/jquery-3.7.1.js"></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-        <script src="js/popper.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <script type="text/javascript"
+            src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript"
+            src="https://cdn.canvasjs.com/canvasjs.min.js"></script>
         <script src="js/script.js"></script>
+
     </body>
 </html>
