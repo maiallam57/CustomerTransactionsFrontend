@@ -84,25 +84,9 @@ h1 {
 }
 
 thead th {
+    color: var(--lightblue);
     background-color: var(--Darkblue);
-    cursor: pointer;
     text-transform: capitalize;
-}
-
-thead th i {
-    transition: .2s ease-in-out;
-}
-
-thead th:hover {
-    color: var(--lightblue);
-}
-
-thead th.asc i {
-    transform: rotate(180deg);
-}
-
-thead th.active {
-    color: var(--lightblue);
 }
 
 tbody tr {

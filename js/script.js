@@ -50,8 +50,8 @@ function displayTransactions(transactions) {
         const customer = customers.find(c => c.id == transaction.customer_id);
         let type = transaction.transaction_type
         transactionTableBody.append(`
-            <tr>
-                <td onclick="displayTransactionsOfCustomer(${customer.id}, '${customer.name}')" class="p-2 px-3">${customer.name}</td>
+            <tr onclick="displayTransactionsOfCustomer(${customer.id}, '${customer.name}')">
+                <td class="p-2 px-3">${customer.name}</td>
                 <td class="p-2 px-3">${transaction.date}</td>
                 <td class="p-2 px-3">${transaction.amount} EGP</td>
                 <td class="p-2 px-3"> <p class="text-center py-1 rounded-3
