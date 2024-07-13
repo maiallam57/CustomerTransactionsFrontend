@@ -1,15 +1,14 @@
 //? npx json-server --watch data/data.json --port 3000
 
-
 let customers = [];
 let transactions = [];
 let filteredTransactions = [];
 
-//! ========================== loader Functions ==========================
+//! ==================== loader Functions ==============================
 function loaderIn() {
     $("body").addClass("overflow-hidden")
-    $('.loading-screen').fadeIn(10, function () {
-        $('.loading-screen').fadeOut(500, function () {
+    $('.loading-screen').fadeIn(1, function () {
+        $('.loading-screen').fadeOut(300, function () {
             $("body").removeClass("overflow-hidden")
         })
     })
@@ -21,6 +20,8 @@ function loaderOut() {
         $("body").removeClass("overflow-hidden")
     })
 }
+
+//! ====================== Fetch Data  =================================
 
 async function fetchData() {
 
@@ -39,6 +40,8 @@ async function fetchData() {
     }
 }
 
+//! ========================== Display Data  ===========================
+
 function displayTransactions(transactions) {
     const transactionTableBody = $('#transactionTableBody');
     transactionTableBody.empty();
@@ -46,26 +49,20 @@ function displayTransactions(transactions) {
     transactions.forEach(transaction => {
         const customer = customers.find(c => c.id == transaction.customer_id);
         let type = transaction.transaction_type
-        if (type == "Transfer") {
-            var td = `<td class="text-center"><span class="bg-primary px-5 border-1 rounded-2">${type}</span></td>`
-        } else if (type == "Deposit") {
-            var td = `<td class="text-center"><span class="bg-warning px-5 border-1 rounded-2">${type}</span></td>`
-        } else if (type == "Payment") {
-            var td = `<td class="text-center"><span class="bg-info px-5 border-1 rounded-2">${type}</span></td>`
-        } else {
-            var td = `<td class="text-center"><span class="bg-danger px-5 border-1 rounded-2">${type}</span></td>`
-        }
         transactionTableBody.append(`
             <tr>
-                <td value="COIN" class="text-center">${customer.name}</td>
-                <td class="text-center">${transaction.date}</td>
-                <td class="text-center">${transaction.amount}</td>
-                ${td}
+                <td class="p-2 px-3">${customer.name}</td>
+                <td class="p-2 px-3">${transaction.date}</td>
+                <td class="p-2 px-3">${transaction.amount}</td>
+                <td class="p-2 px-3"> <p class="text-center py-1 rounded-3
+                                ${type.toLowerCase()}">${type}</p></td>
             </tr>
         `);
     });
     updateChart(transactions);
 }
+
+//! ===================== Search Data  =================================
 
 function filterTransactions() {
     loaderIn()
@@ -84,6 +81,8 @@ function filterTransactions() {
 
     displayTransactions(filteredTransactions);
 }
+
+//! ================ Display & Update Cart  ============================
 
 function updateChart(transactions) {
     const ctx = document.getElementById('transactionChart').getContext('2d');
@@ -107,6 +106,8 @@ function updateChart(transactions) {
     });
 }
 
+//! ========================= Document Ready  ==========================
+
 $(document).ready(function () {
 
     //* ======================== loader ========================
@@ -116,3 +117,4 @@ $(document).ready(function () {
 
     fetchData();
 });
+

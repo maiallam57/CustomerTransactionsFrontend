@@ -29,41 +29,61 @@
 
         <div class="container mt-5 px-5">
             <h1 class="text-center">Customer Transactions</h1>
-            <div class="row mb-4">
-                <div class="col-md-6">
-                    <input type="text" id="customerNameFilter"
-                        class="form-control mb-2"
-                        placeholder="Filter by Customer Name">
-                </div>
-                <div class="col-md-6">
-                    <input type="number" id="transactionAmountFilter"
-                        class="form-control mb-2"
+
+            <!--================== title & search =====================-->
+
+            <div class="py-5 bg-black">
+                <div class="d-flex justify-content-center gap-4">
+                    <div
+                        class="search-group w-25 p-2 rounded-3 d-flex justify-content-center align-items-center">
+                        <input type="text" id="customerNameFilter"
+                            class="w-100 bg-transparent border-0"
+                            placeholder="Filter by Customer Name">
+                        <i class="fa-solid fa-magnifying-glass text-dark"></i>
+                    </div>
+                    <div
+                    class="search-group w-25 p-2 rounded-3 d-flex justify-content-center align-items-center">
+                    <input type="text" id="transactionAmountFilter"
+                        class="w-100 bg-transparent border-0"
                         placeholder="Filter by Transaction Amount">
+                    <i class="fa-solid fa-magnifying-glass text-dark"></i>
+                </div>
                 </div>
             </div>
 
-            <table
-                class="table table-hover table-bordered table-striped table-responsive"
-                id="transactionTable">
-                <thead>
-                    <tr class="table-dark pb-1">
-                        <th class="text-center">Customer Name</th>
-                        <th class="text-center">Transaction Date</th>
-                        <th class="text-center">Transaction Amount EGP</th>
-                        <th class="text-center">Transaction Type</th>
-                    </tr>
-                </thead>
-                <tbody id="transactionTableBody">
-                    <!-- Data will be inserted here -->
-                </tbody>
-            </table>
+            <!--================== start table =====================-->
+            <div
+                class="table-body bg-white mx-auto vh-100 rounded-2 my-3 text-dark overflow-y-scroll">
+                <table class="w-100 p-3 table-striped table-responsive"
+                    id="transactionTable">
+                    <thead>
+                        <tr class="position-sticky top-0 left-0 right-0">
+                            <th class="p-3"> Customer Name <i
+                                    class="fa-solid fa-arrow-up"></i></th>
+                            <th class="p-3"> Transaction Date <i
+                                    class="fa-solid fa-arrow-up"></i></th>
+                            <th class="p-3"> Transaction Amount <i
+                                    class="fa-solid fa-arrow-up"></i></th>
+                            <th class="p-3"> Transaction Type <i
+                                    class="fa-solid fa-arrow-up"></i></th>
+                        </tr>
+                    </thead>
+                    <tbody id="transactionTableBody">
+                        <!-- Data will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
 
+            <!--================== end table =====================-->
             <canvas id="transactionChart" width="100%"
                 class="p-4"></canvas>
         </div>
 
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/jquery-3.7.1.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="js/popper.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>
