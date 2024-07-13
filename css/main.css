@@ -1,0 +1,20 @@
+body {
+    background-color: #f8f9fa;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.table {
+    margin-top: 20px;
+}
+
+#transactionChart {
+    margin-top: 40px;
+}
+
+
+.w-15 {
+    width: 15%;
+}

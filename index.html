@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/all.min.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+
+        <title>Customer Transaction | Mai Allam</title>
+        <link rel="icon" href="images/route.jpg">
+    </head>
+    <body class="bg-black text-white">
+
+        <!-- loading-screen -->
+        <section
+            class="loading-screen position-fixed text-center top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-content-center z-1">
+            <i class="fa fa-spinner fa-spin fa-5x"></i>
+        </section>
+
+        <!-- As a heading -->
+        <nav class="navbar mt-5">
+            <div class="container text-center align-items-center">
+                <span class="navbar-brand mb-0 h1"><img src="images/route.jpg"
+                        class="w-15"
+                        alt></span>
+            </div>
+        </nav>
+
+        <div class="container mt-5 px-5">
+            <h1 class="text-center">Customer Transactions</h1>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <input type="text" id="customerNameFilter"
+                        class="form-control mb-2"
+                        placeholder="Filter by Customer Name">
+                </div>
+                <div class="col-md-6">
+                    <input type="number" id="transactionAmountFilter"
+                        class="form-control mb-2"
+                        placeholder="Filter by Transaction Amount">
+                </div>
+            </div>
+
+            <table class="table table-striped rounded-2" id="transactionTable">
+                <thead>
+                    <tr class="table-primary pb-1">
+                        <th class="text-center">Customer Name</th>
+                        <th class="text-center">Transaction Date</th>
+                        <th class="text-center">Transaction Amount EGP</th>
+                        <th class="text-center">Transaction Type</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionTableBody">
+                    <!-- Data will be inserted here -->
+                </tbody>
+            </table>
+
+            <canvas id="transactionChart" width="100%"
+                class="p-4"></canvas>
+        </div>
+
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/jquery-3.7.1.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
