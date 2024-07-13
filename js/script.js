@@ -57,7 +57,6 @@ function displayTransactions(transactions) {
         }
         transactionTableBody.append(`
             <tr>
-
                 <td value="COIN" class="text-center">${customer.name}</td>
                 <td class="text-center">${transaction.date}</td>
                 <td class="text-center">${transaction.amount}</td>
@@ -65,7 +64,6 @@ function displayTransactions(transactions) {
             </tr>
         `);
     });
-
     updateChart(transactions);
 }
 
