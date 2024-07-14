@@ -10,16 +10,16 @@
         <title>Customer Transaction | Mai Allam</title>
         <link rel="icon" href="images/money-bill-transfer.png">
     </head>
-    <body class="bg-black text-white">
+    <body class="bg-black text-white position-relative">
 
         <!-- loading-screen -->
-        <section
+        <div
             class="loading-screen position-fixed text-center top-0 start-0 end-0 bottom-0 bg-black justify-content-center align-content-center z-1">
             <i class="fa fa-spinner fa-spin fa-5x"></i>
-        </section>
+        </div>
 
         <!-- As a heading -->
-        <nav
+        <section
             class="navbar my-3 m-auto justify-content-center align-content-center">
             <div
                 class="container my-3 pb-3 m-auto justify-content-center align-content-center">
@@ -28,9 +28,9 @@
             </div>
             <h1 class="text-center">Customer Transactions</h1>
 
-        </nav>
+        </section>
 
-        <div class="container px-5">
+        <section class="container px-5">
             <!--================== title & search =====================-->
             <div class="py-3 bg-black">
                 <div class="d-flex justify-content-center gap-4">
@@ -50,8 +50,10 @@
                     </div>
                 </div>
             </div>
+        </section>
 
-            <!--================== start table =====================-->
+        <section class="container px-5">
+            <!--================== table =====================-->
             <div
                 class="table-body bg-white mx-auto vh-100 rounded-2 my-3 text-dark overflow-y-scroll">
                 <table class="w-100 p-3 table-striped table-responsive"
@@ -71,16 +73,20 @@
                     </tbody>
                 </table>
             </div>
+        </section>
 
-            <!--================== end table =====================-->
+        <!--================== charts =====================-->
+        <section class="container px-5">
             <div id="chartContainer"
                 class="w-100 mb-5 rounded-3 overflow-hidden"
                 style="height: 350px;">
             </div>
+        </section>
 
+        <section class="container px-5">
             <canvas id="transactionChart" width="100%"
                 class="p-4"></canvas>
-        </div>
+        </section>
 
         <script src="js/bootstrap.bundle.min.js"></script>
         <script src="js/jquery-3.7.1.js"></script>

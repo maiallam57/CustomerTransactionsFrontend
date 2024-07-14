@@ -4,6 +4,7 @@ let customers = [];
 let transactions = [];
 let filteredTransactions = [];
 
+
 //! ==================== loader Functions ==============================
 function loaderIn() {
     $("body").addClass("overflow-hidden")
@@ -99,8 +100,8 @@ function updateChart(transactions) {
             datasets: [{
                 label: 'Total Transaction Amount',
                 data: totalAmounts,
-                borderColor: 'rgba(75, 192, 255, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(55, 135, 255,0.5)',
+                backgroundColor: 'rgba(55, 135, 255,0.5)',
             }]
         }
     });
@@ -156,14 +157,33 @@ function displayTransactionsOfCustomer(customerId, customerName) {
 
     // Update chart with new data points
     chart.options.data[0].dataPoints = dataPoints;
-    chart.options.title.text = `Total Transaction Amount per Day for Customer ${customerName}`;
+    if (customerName) {
+        chart.options.title.text = `Total Transaction Amount per Day for Customer: ${customerName}`;
+    } else {
+        chart.options.title.text = `Total Transaction Amount per Day for a Customer`;
+    }
     chart.render();
 }
+//! ========================= Animate Sections==========================
+function animateSections() {
+    $("section").each(function (index) {
+        if ($(this).offset().top < $(window).scrollTop() + $(window).height()) {
+            $(this).animate({
+                top: "0rem"
+            }, (index + 10) * 100);
+        }
+    });
+}
 
+//! ========================= scroll  ==========================
+$(window).scroll(function () {
+    animateSections();
+});
 
 //! ========================= Document Ready  ==========================
 
 $(document).ready(function () {
+    animateSections();
 
     //* ======================== loader ========================
     loaderOut()

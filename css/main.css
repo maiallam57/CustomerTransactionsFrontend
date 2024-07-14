@@ -18,6 +18,10 @@ body {
     width: 10%;
 }
 
+section {
+    position: relative;
+    top: 5rem;
+}
 
 /* ========================= table ======================= */
 
