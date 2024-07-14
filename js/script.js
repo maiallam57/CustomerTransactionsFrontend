@@ -27,12 +27,12 @@ function loaderOut() {
 async function fetchData() {
 
     try {
-        let customersResponse = await fetch(`http://localhost:3000/customers`);
-        customers = await customersResponse.json();
-        console.log(customers);
-
-        let transactionsResponse = await fetch(`http://localhost:3000/transactions`);
-        transactions = await transactionsResponse.json();
+        // let customersResponse = await fetch(`http://localhost:3000/customers`);
+        // let transactionsResponse = await fetch(`http://localhost:3000/transactions`);
+        let Response = await fetch(`https://raw.githubusercontent.com/maiallam57/CustomerTransactionsFrontend/main/data/data.json`);
+        let data = await Response.json();
+        transactions = data.transactions;
+        customers = data.customers;
         console.log(transactions);
         displayTransactions(transactions);
 
