@@ -3,46 +3,14 @@ body {
 }
 
 :root {
-    --main-color: #eaeaea;
-    --stroke-color: black;
-    --blue: #0e0620;
     --white: #fff;
-    --green: #2ccf6d;
+    --green: #86e49d;
+    --red: #d893a3;
+    --yellow: #FFAB37;
     --Darkblue: #3787FF;
+    --blue: #6fcaea;
     --lightblue: #E4F1F8;
-    --yellow: #FF9D42;
-    --black1: #222;
-    --black2: #999;
     --black: #000;
-    --white: #fff;
-    --dark: #374151;
-    --darker: #1F2937;
-    --darkest: #111827;
-    --grey: #6B7280;
-    --light: #EEE;
-    --dark-text: #f8fbff;
-    --light-body: #f3f8fe;
-    --light-main: #fdfdfd;
-    --light-second: #c3c2c8;
-    --light-hover: #f0f0f0;
-    --light-text: #151426;
-    --light-btn: #3787FF;
-    --blue: #E4F1F8;
-    --white: #fff;
-    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-
-
-h1 {
-    margin-bottom: 20px;
-}
-
-.table {
-    margin-top: 20px;
-}
-
-#transactionChart {
-    margin-top: 40px;
 }
 
 
@@ -60,7 +28,7 @@ h1 {
 
 .search-group:hover {
     width: 45% !important;
-    background-color: var(--light-second);
+    background-color: var(--lightblue);
 }
 
 .search-group input {
@@ -117,12 +85,12 @@ tbody tr.hide td p {
 }
 
 .deposit {
-    background-color: #86e49d;
+    background-color: var(--green);
     color: var(--black);
 }
 
 .withdraw {
-    background-color: #d893a3;
+    background-color: var(--red);
     color: var(--black);
 }
 
@@ -131,5 +99,5 @@ tbody tr.hide td p {
 }
 
 .payment {
-    background-color: #6fcaea;
+    background-color: var(--blue);
 }
