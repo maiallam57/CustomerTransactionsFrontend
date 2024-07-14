@@ -1,6 +1,6 @@
 # **Description:**
 Your goal is to create an application thatretrieves the customer and transaction data from a providedAPI endpoint and displays it in a user-friendly format.
-you should run this first: 
+for using local server use:
 > npx json-server --watch data/data.json --port 3000
 
 ## **Features**
