@@ -17,7 +17,6 @@ CustomerTransactionsFrontend is a web application designed to display and manage
 ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
-![GitHub](https://img.shields.io/badge/Github-%23000000.svg?style=for-the-badge&logo=github&logoColor=white)
 
 
 
@@ -25,7 +24,6 @@ CustomerTransactionsFrontend is a web application designed to display and manage
 
 🛡 **Live Demo**: [CustomerTransactionsFrontend](https://maiallam57.github.io/CustomerTransactionsFrontend/)
 
-🛡 **Source Code**: [GitHub Repository](https://github.com/maiallam57/CustomerTransactionsFrontend)
 
 ## Installation
 
