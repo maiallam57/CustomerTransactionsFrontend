@@ -41,12 +41,13 @@ To run this project locally, follow these steps:
 
 3. Open `index.html` in your favorite web browser.
 
-
+#
 Note: for using local server use...
 ```sh
  npx json-server --watch data/data.json --port 3000
 ```
 
+#
 
 ## Usage
 
@@ -56,7 +57,7 @@ Note: for using local server use...
 
 ## Screenshots
 
-![CustomerTransactionsFrontend](https://via.placeholder.com/800x400.png?text=Screenshot+coming+soon)
+![CustomerTransactionsFrontend](https://raw.githubusercontent.com/maiallam57/CustomerTransactionsFrontend/main/images/Capture.PNG)
 
 ## Contributing
 
